@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+</head>
+<body>
+    <h1>Make a Prediction</h1>
+    <form method="POST" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year"><br>
+
+        <label for="hour">Hour:</label>
+        <input type="text" id="hour" name="hour"><br>
+
+        <label for="distance">Distance:</label>
+        <input type="text" id="distance" name="distance"><br>
+
+        <label for="bearing">Bearing:</label>
+        <input type="text" id="bearing" name="bearing"><br>
+
+        <label for="passenger_count">Passenger Count:</label>
+        <input type="text" id="passenger_count" name="passenger_count"><br>
+
+        <label for="pickup_longitude">Pickup Longitude:</label>
+        <input type="text" id="pickup_longitude" name="pickup_longitude"><br>
+
+        <label for="dropoff_latitude">Dropoff Latitude:</label>
+        <input type="text" id="dropoff_latitude" name="dropoff_latitude"><br>
+
+        <label for="weekday">Weekday:</label>
+        <input type="text" id="weekday" name="weekday"><br>
+
+        <label for="ewr_dist">EWR Distance:</label>
+        <input type="text" id="ewr_dist" name="ewr_dist"><br>
+
+        <label for="pickup_latitude">Pickup Latitude:</label>
+        <input type="text" id="pickup_latitude" name="pickup_latitude"><br>
+
+        <label for="lga_dist">LGA Distance:</label>
+        <input type="text" id="lga_dist" name="lga_dist"><br>
+
+        <label for="month">Month:</label>
+        <input type="text" id="month" name="month"><br>
+
+        <label for="sol_dist">SOL Distance:</label>
+        <input type="text" id="sol_dist" name="sol_dist"><br>
+
+        <label for="nyc_dist">NYC Distance:</label>
+        <input type="text" id="nyc_dist" name="nyc_dist"><br>
+
+        <label for="jfk_dist">JFK Distance:</label>
+        <input type="text" id="jfk_dist" name="jfk_dist"><br>
+
+        <label for="dropoff_longitude">Dropoff Longitude:</label>
+        <input type="text" id="dropoff_longitude" name="dropoff_longitude"><br>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
